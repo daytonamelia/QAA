@@ -1,0 +1,33 @@
+Part 1 Q2:
+
+The N content is consistent, with more Ns in the beginning of the read correlating to a slight dip in quality in the beginning of the read.
+
+Part 1 Q3:
+
+The overall line of the plots (the means of the scores) is exactly the same, but my plots lack the error bars and color coding. Essentially, the fastqc plot is prettier!
+
+The fastqc plots took 3 minutes and 45 seconds and my histogram script took 10 minutes and 2 seconds. 
+The fastqc plots took less memory (~20 kbytes less) and produced a lot more data!
+My guess is that fastqc is much more optimized and written in a language closer to the hardware such as java.
+
+Part 1 Q4:
+
+The per-base qscore is more than sufficient for this data, and the per-sequence-quality scores are also very high quality. The sequence length distribution is all 101 bp. Overall, these data are of very high quality.
+
+Part 2 Q6:
+
+For 2_2B_control_S2_L008:
+
+Total read pairs processed:          5,830,665
+  Read 1 with adapter:                 423,128 (7.3%)
+  Read 2 with adapter:                 473,368 (8.1%)
+Pairs written (passing filters):     5,830,665 (100.0%)
+
+For 19_3F_fox_S14_L008:
+
+Total read pairs processed:         16,348,255
+  Read 1 with adapter:                 546,623 (3.3%)
+  Read 2 with adapter:                 676,564 (4.1%)
+Pairs written (passing filters):    16,348,255 (100.0%)
+
+Part 2 Q
