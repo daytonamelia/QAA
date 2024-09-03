@@ -1,0 +1,61 @@
+---
+title: "QAA_report"
+author: "Amelia Dayton"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = FALSE)
+library(insight)
+```
+
+## Read Quality Score Distributions
+
+### FASTQC per-base quality score distributions:
+2_2B_control_S2_L008:
+![2_2B_control_S2_L008_R1_001_perbasequality](fastqc_plots/2_2B_control_S2_L008_R1_001_perbasequality.png) ![2_2B_control_S2_L008_R2_001_perbasequality](fastqc_plots/2_2B_control_S2_L008_R2_001_perbasequality.png)
+
+19_3F_fox_S14_L008:
+![19_3F_fox_S14_L008_R1_001_perbasequality](fastqc_plots/19_3F_fox_S14_L008_R1_001_perbasequality.png) ![19_3F_fox_S14_L008_R2_001_perbasequality](fastqc_plots/19_3F_fox_S14_L008_R2_001_perbasequality.png)
+
+### FASTQC per-base N content:
+2_2B_control_S2_L008:
+![2_2B_control_S2_L008_R1_001_perbasencontent](fastqc_plots/2_2B_control_S2_L008_R1_001_perbasencontent.png) ![2_2B_control_S2_L008_R2_001_perbasencontent](fastqc_plots/2_2B_control_S2_L008_R2_001_perbasencontent.png)
+
+19_3F_fox_S14_L008:
+![19_3F_fox_S14_L008_R1_001_perbasencontent](fastqc_plots/19_3F_fox_S14_L008_R1_001_perbasencontent.png) ![19_3F_fox_S14_L008_R2_001_perbasencontent](fastqc_plots/19_3F_fox_S14_L008_R2_001_perbasencontent.png)
+
+### Amelia-Written Per-Base Histogram Plots
+2_2B_control_S2_L008:
+![2_2B_control_S2_L008_R1_001_perbasehist](perbasehist.py_plots/2_2B_control_S2_L008_R1_001_perbasehist.png) ![2_2B_control_S2_L008_R2_001_perbasehist](perbasehist.py_plots/2_2B_control_S2_L008_R2_001_perbasehist.png)
+
+19_3F_fox_S14_L008:
+![19_3F_fox_S14_L008_R1_001_perbasehist](perbasehist.py_plots/19_3F_fox_S14_L008_R1_001_perbasehist.png) ![19_3F_fox_S14_L008_R2_001_perbasehist](perbasehist.py_plots/19_3F_fox_S14_L008_R2_001_perbasehist.png)
+
+## Adapter Trimming Comparisons
+2_2B_control_S2_L008:
+![readlen_2_2B_control_S2_L008_R1R2.png](readlen_plots/readlen_2_2B_control_S2_L008_R1R2.png)
+
+19_3F_fox_S14_L008:
+![readlen_19_3F_fox_S14_L008_R1R2.png](readlen_plots/readlen_19_3F_fox_S14_L008_R1R2.png)
+
+## Alignment and Strand-Specificity
+
+```{r paged.print=TRUE}
+ControlReads <- data.frame (
+  Mapped=200241,
+  Unmapped=11388657)
+
+FoxReads <- data.frame (
+  Mapped=732750,
+  Unmapped=31963176
+)
+
+# print tables prettily somehow...
+```
+
+
+
