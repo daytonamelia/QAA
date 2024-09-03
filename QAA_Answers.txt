@@ -30,4 +30,7 @@ Total read pairs processed:         16,348,255
   Read 2 with adapter:                 676,564 (4.1%)
 Pairs written (passing filters):    16,348,255 (100.0%)
 
-Part 2 Q
+Part 2 Q8:
+
+In both conditions, R2 was trimmed more extensively. ADD JUSTIFICATION.
+

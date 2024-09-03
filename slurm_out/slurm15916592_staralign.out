@@ -1,0 +1,14 @@
+	/projects/bgmp/adayton/miniforge3/envs/bgmp_star/bin/STAR-avx2 --runThreadN 8 --runMode alignReads --outFilterMultimapNmax 3 --outSAMunmapped Within KeepPairs --alignIntronMax 1000000 --alignMatesGapMax 1000000 --readFilesCommand zcat --readFilesIn ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz --genomeDir ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b --outFileNamePrefix ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_
+	STAR version: 2.7.11b   compiled: 2024-07-03T14:39:20+0000 :/opt/conda/conda-bld/star_1720017372352/work/source
+Sep 02 17:46:38 ..... started STAR run
+Sep 02 17:46:38 ..... loading genome
+Sep 02 17:46:50 ..... started mapping
+Sep 02 17:47:26 ..... finished mapping
+Sep 02 17:47:27 ..... finished successfully
+	/projects/bgmp/adayton/miniforge3/envs/bgmp_star/bin/STAR-avx2 --runThreadN 8 --runMode alignReads --outFilterMultimapNmax 3 --outSAMunmapped Within KeepPairs --alignIntronMax 1000000 --alignMatesGapMax 1000000 --readFilesCommand zcat --readFilesIn ../19_3F_fox_S14_L008/cleaned_19_3F_fox_S14_L008_R1_001.fastq.gz ../19_3F_fox_S14_L008/cleaned_19_3F_fox_S14_L008_R2_001.fastq.gz --genomeDir ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b --outFileNamePrefix ../19_3F_fox_S14_L008/align_2_19_3F_fox_S14_L008_
+	STAR version: 2.7.11b   compiled: 2024-07-03T14:39:20+0000 :/opt/conda/conda-bld/star_1720017372352/work/source
+Sep 02 17:47:27 ..... started STAR run
+Sep 02 17:47:27 ..... loading genome
+Sep 02 17:47:36 ..... started mapping
+Sep 02 17:49:30 ..... finished mapping
+Sep 02 17:49:30 ..... finished successfully

@@ -1,0 +1,100 @@
+100000 GFF lines processed.
+200000 GFF lines processed.
+300000 GFF lines processed.
+400000 GFF lines processed.
+500000 GFF lines processed.
+600000 GFF lines processed.
+700000 GFF lines processed.
+800000 GFF lines processed.
+900000 GFF lines processed.
+1000000 GFF lines processed.
+1100000 GFF lines processed.
+1200000 GFF lines processed.
+1300000 GFF lines processed.
+1400000 GFF lines processed.
+1500000 GFF lines processed.
+1600000 GFF lines processed.
+1700000 GFF lines processed.
+1800000 GFF lines processed.
+1889871 GFF lines processed.
+100000 alignment record pairs processed.
+200000 alignment record pairs processed.
+300000 alignment record pairs processed.
+400000 alignment record pairs processed.
+500000 alignment record pairs processed.
+600000 alignment record pairs processed.
+700000 alignment record pairs processed.
+800000 alignment record pairs processed.
+900000 alignment record pairs processed.
+1000000 alignment record pairs processed.
+1100000 alignment record pairs processed.
+1200000 alignment record pairs processed.
+1300000 alignment record pairs processed.
+1400000 alignment record pairs processed.
+1500000 alignment record pairs processed.
+1600000 alignment record pairs processed.
+1700000 alignment record pairs processed.
+1800000 alignment record pairs processed.
+1900000 alignment record pairs processed.
+2000000 alignment record pairs processed.
+2100000 alignment record pairs processed.
+2200000 alignment record pairs processed.
+2300000 alignment record pairs processed.
+2400000 alignment record pairs processed.
+2500000 alignment record pairs processed.
+2600000 alignment record pairs processed.
+2700000 alignment record pairs processed.
+2800000 alignment record pairs processed.
+2900000 alignment record pairs processed.
+3000000 alignment record pairs processed.
+3100000 alignment record pairs processed.
+3200000 alignment record pairs processed.
+3300000 alignment record pairs processed.
+3400000 alignment record pairs processed.
+3500000 alignment record pairs processed.
+3600000 alignment record pairs processed.
+3700000 alignment record pairs processed.
+3800000 alignment record pairs processed.
+3900000 alignment record pairs processed.
+4000000 alignment record pairs processed.
+4100000 alignment record pairs processed.
+4200000 alignment record pairs processed.
+4300000 alignment record pairs processed.
+4400000 alignment record pairs processed.
+4500000 alignment record pairs processed.
+4600000 alignment record pairs processed.
+4700000 alignment record pairs processed.
+4800000 alignment record pairs processed.
+4900000 alignment record pairs processed.
+5000000 alignment record pairs processed.
+5100000 alignment record pairs processed.
+5200000 alignment record pairs processed.
+5300000 alignment record pairs processed.
+5400000 alignment record pairs processed.
+5500000 alignment record pairs processed.
+5600000 alignment record pairs processed.
+5700000 alignment record pairs processed.
+5794449 alignment record pairs processed.
+	Command being timed: "htseq-count --stranded=yes --stranded=reverse /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/2_2B_control_S2_L008/align_2_2B_control_S2_L008_Aligned.out.sam /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/mouse_data/Mus_musculus.GRCm39.112.gtf"
+	User time (seconds): 308.33
+	System time (seconds): 2.91
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:19.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 252556
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 405554
+	Voluntary context switches: 1552
+	Involuntary context switches: 500
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

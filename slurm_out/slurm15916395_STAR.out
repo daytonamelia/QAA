@@ -1,0 +1,4 @@
+	/projects/bgmp/adayton/miniforge3/envs/bgmp_star/bin/STAR-avx2 --runThreadN 8 --runMode genomeGenerate --genomeDir ./Mus_musculus.GRCm39.dna_ens112_STAR_27.11b --genomeFastaFiles ./Mus_musculus.GRCm39.dna.primary_assembly.fa.gz --sjdbGTFfile ./Mus_musculus.GRCm39.112.gtf.gz
+	STAR version: 2.7.11b   compiled: 2024-07-03T14:39:20+0000 :/opt/conda/conda-bld/star_1720017372352/work/source
+Sep 02 15:11:01 ..... started STAR run
+Sep 02 15:11:01 ... starting to generate Genome files

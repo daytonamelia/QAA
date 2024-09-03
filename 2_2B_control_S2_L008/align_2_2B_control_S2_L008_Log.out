@@ -1,0 +1,192 @@
+STAR version=2.7.11b
+STAR compilation time,server,dir=2024-07-03T14:39:20+0000 :/opt/conda/conda-bld/star_1720017372352/work/source
+##### Command Line:
+/projects/bgmp/adayton/miniforge3/envs/bgmp_star/bin/STAR-avx2 --runThreadN 8 --runMode alignReads --outFilterMultimapNmax 3 --outSAMunmapped Within KeepPairs --alignIntronMax 1000000 --alignMatesGapMax 1000000 --readFilesCommand zcat --readFilesIn ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz --genomeDir ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b --outFileNamePrefix ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_
+###### All USER parameters from Command Line:
+runThreadN                    8     ~RE-DEFINED
+runMode                       alignReads        ~RE-DEFINED
+outFilterMultimapNmax         3     ~RE-DEFINED
+outSAMunmapped                Within   KeepPairs        ~RE-DEFINED
+alignIntronMax                1000000     ~RE-DEFINED
+alignMatesGapMax              1000000     ~RE-DEFINED
+readFilesCommand              zcat        ~RE-DEFINED
+readFilesIn                   ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz   ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz        ~RE-DEFINED
+genomeDir                     ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b     ~RE-DEFINED
+outFileNamePrefix             ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           alignReads   
+runThreadN                        8
+genomeDir                         ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b
+readFilesIn                       ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz   ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz   
+readFilesCommand                  zcat   
+outFileNamePrefix                 ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_
+outSAMunmapped                    Within   KeepPairs   
+outFilterMultimapNmax             3
+alignIntronMax                    1000000
+alignMatesGapMax                  1000000
+
+-------------------------------
+##### Final effective command line:
+/projects/bgmp/adayton/miniforge3/envs/bgmp_star/bin/STAR-avx2   --runMode alignReads      --runThreadN 8   --genomeDir ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b   --readFilesIn ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz   ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz      --readFilesCommand zcat      --outFileNamePrefix ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_   --outSAMunmapped Within   KeepPairs      --outFilterMultimapNmax 3   --alignIntronMax 1000000   --alignMatesGapMax 1000000
+----------------------------------------
+
+Number of fastq files for each mate = 1
+
+   Input read files for mate 1 :
+-rw-rw----+ 1 adayton is.racs.pirg.bgmp 299878410 Sep  2 17:10 ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz
+
+   readsCommandsFile:
+exec > "../2_2B_control_S2_L008/align_2_2B_control_S2_L008__STARtmp/tmp.fifo.read1"
+echo FILE 0
+zcat      "../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz"
+
+
+   Input read files for mate 2 :
+-rw-rw----+ 1 adayton is.racs.pirg.bgmp 317881099 Sep  2 17:12 ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz
+
+   readsCommandsFile:
+exec > "../2_2B_control_S2_L008/align_2_2B_control_S2_L008__STARtmp/tmp.fifo.read2"
+echo FILE 0
+zcat      "../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz"
+
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+Finished loading and checking parameters
+Reading genome generation parameters:
+### /projects/bgmp/adayton/miniforge3/envs/bgmp_star/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 8   --genomeDir ./Mus_musculus.GRCm39.dna_ens112_STAR_27.11b   --genomeFastaFiles ./Mus_musculus.GRCm39.dna.primary_assembly.fa      --sjdbGTFfile ./Mus_musculus.GRCm39.112.gtf
+### GstrandBit=32
+versionGenome                 2.7.4a     ~RE-DEFINED
+genomeType                    Full     ~RE-DEFINED
+genomeFastaFiles              ./Mus_musculus.GRCm39.dna.primary_assembly.fa        ~RE-DEFINED
+genomeSAindexNbases           14     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+genomeTransformType           None     ~RE-DEFINED
+genomeTransformVCF            -     ~RE-DEFINED
+sjdbOverhang                  100     ~RE-DEFINED
+sjdbFileChrStartEnd           -        ~RE-DEFINED
+sjdbGTFfile                   ./Mus_musculus.GRCm39.112.gtf     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+genomeFileSizes               2796556377   22378391817        ~RE-DEFINED
+Genome version is compatible with current STAR
+Number of real (reference) chromosomes= 61
+1	1	195154279	0
+2	10	130530862	195297280
+3	11	121973369	325844992
+4	12	120092757	448004096
+5	13	120883175	568328192
+6	14	125139656	689438720
+7	15	104073951	814743552
+8	16	98008968	919076864
+9	17	95294699	1017118720
+10	18	90720763	1112539136
+11	19	61420004	1203503104
+12	2	181755017	1265106944
+13	3	159745316	1447034880
+14	4	156860686	1606942720
+15	5	151758149	1763966976
+16	6	149588044	1915748352
+17	7	144995196	2065432576
+18	8	130127694	2210660352
+19	9	124359700	2340945920
+20	MT	16299	2465464320
+21	X	169476592	2465726464
+22	Y	91455967	2635333632
+23	JH584299.1	953012	2726821888
+24	GL456233.2	559103	2727870464
+25	JH584301.1	259875	2728656896
+26	GL456211.1	241735	2728919040
+27	GL456221.1	206961	2729181184
+28	JH584297.1	205776	2729443328
+29	JH584296.1	199368	2729705472
+30	GL456354.1	195993	2729967616
+31	JH584298.1	184189	2730229760
+32	JH584300.1	182347	2730491904
+33	GL456219.1	175968	2730754048
+34	GL456210.1	169725	2731016192
+35	JH584303.1	158099	2731278336
+36	JH584302.1	155838	2731540480
+37	GL456212.1	153618	2731802624
+38	JH584304.1	114452	2732064768
+39	GL456379.1	72385	2732326912
+40	GL456366.1	47073	2732589056
+41	GL456367.1	42057	2732851200
+42	GL456239.1	40056	2733113344
+43	GL456383.1	38659	2733375488
+44	GL456385.1	35240	2733637632
+45	GL456360.1	31704	2733899776
+46	GL456378.1	31602	2734161920
+47	MU069435.1	31129	2734424064
+48	GL456389.1	28772	2734686208
+49	GL456372.1	28664	2734948352
+50	GL456370.1	26764	2735210496
+51	GL456381.1	25871	2735472640
+52	GL456387.1	24685	2735734784
+53	GL456390.1	24668	2735996928
+54	GL456394.1	24323	2736259072
+55	GL456392.1	23629	2736521216
+56	GL456382.1	23158	2736783360
+57	GL456359.1	22974	2737045504
+58	GL456396.1	21240	2737307648
+59	GL456368.1	20208	2737569792
+60	MU069434.1	8412	2737831936
+61	JH584295.1	1976	2738094080
+--sjdbOverhang = 100 taken from the generated genome
+Started loading the genome: Mon Sep  2 17:46:38 2024
+
+Genome: size given as a parameter = 2796556377
+SA: size given as a parameter = 22378391817
+SAindex: size given as a parameter = 1
+Read from SAindex: pGe.gSAindexNbases=14  nSAi=357913940
+nGenome=2796556377;  nSAbyte=22378391817
+GstrandBit=32   SA number of indices=5425064682
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 2796556377 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 2796556377 bytes
+SA file size: 22378391817 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=1 eof=0 fail=0 bad=0; loaded 22378391817 bytes
+Loading SAindex ... done: 1565873619 bytes
+Finished loading the genome: Mon Sep  2 17:46:50 2024
+
+Processing splice junctions database sjdbN=289553,   pGe.sjdbOverhang=100 
+To accommodate alignIntronMax=1000000 redefined winBinNbits=18
+To accommodate alignIntronMax=1000000 and alignMatesGapMax=1000000, redefined winFlankNbins=4 and winAnchorDistNbins=8
+Created thread # 1
+Created thread # 2
+Starting to map file # 0
+mate 1:   ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R1_001.fastq.gz
+mate 2:   ../2_2B_control_S2_L008/cleaned_2_2B_control_S2_L008_R2_001.fastq.gz
+Created thread # 3
+Created thread # 4
+Created thread # 5
+Created thread # 6
+Created thread # 7
+Thread #6 end of input stream, nextChar=-1
+Completed: thread #0
+Completed: thread #7
+Completed: thread #1
+Joined thread # 1
+Completed: thread #6
+Completed: thread #3
+Completed: thread #4
+Completed: thread #5
+Completed: thread #2
+Joined thread # 2
+Joined thread # 3
+Joined thread # 4
+Joined thread # 5
+Joined thread # 6
+Joined thread # 7
+Sep 02 17:47:26 ..... finished mapping
+RAM after mapping:
+VmPeak:	27890596 kB; VmSize:	27825144 kB; VmHWM:	27321572 kB; VmRSS:	27320252 kB; 
+RAM after freeing genome index memory:
+VmPeak:	27890596 kB; VmSize:	 1711052 kB; VmHWM:	27321572 kB; VmRSS:	 1206220 kB; 
+ALL DONE!
