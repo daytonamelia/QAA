@@ -3,14 +3,16 @@
 *.fastq.gz
 *.fq
 *.fq.gz
-.fasta
-.fa
-.fasta.gz
-.fa.gz
+*.fasta
+*.fa
+*.fasta.gz
+*.fa.gz
 *.sam
 *.bam
 *.gtf
 *.gff
+*.gtf.gz
+/fastqc_out
 
 # STAR files
 *.out.tab
