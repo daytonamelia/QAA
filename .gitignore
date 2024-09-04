@@ -11,6 +11,7 @@
 *.bam
 *.gtf
 *.gff
+*.Rproj
 
 # STAR files
 *.out.tab
