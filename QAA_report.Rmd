@@ -103,9 +103,9 @@ knitr::include_graphics("perbasehist_plots/19_3F_fox_S14_L008_R1_001_perbasehist
 knitr::include_graphics("perbasehist_plots/19_3F_fox_S14_L008_R2_001_perbasehist.png")
 ```
 
-The overall line of the plots (the means of the scores) is exactly the same, but my plots lack the error bars and color coding. The fastqc plots took 3 minutes and 45 seconds and my histogram script took 10 minutes and 2 seconds. The fastqc plots took less memory (~20 kbytes less) and produced a lot more data! Fastqc is likely much more optimized and written in a language closer to the hardware such as java so it outperforms my script. Essentially, the fastqc plot is faster and prettier, but both methods produce the same data.
+The overall line of the plots (the means of the scores) is the same as FASTQC but my plots lack the error bars and color coding. The fastqc plots took 3 minutes and 45 seconds and my histogram script took 10 minutes and 2 seconds. The fastqc plots took less memory (~20 kbytes less) and produced a lot more data! Fastqc is likely much more optimized and written in a language closer to the hardware such as java so it outperforms my script. Essentially, the fastqc plot is faster and prettier, but both methods can produce the same plot.
 
-The per-base qscore is more than sufficient for these data, and the per-sequence-quality scores are also very high quality. The sequence length distribution is all an even 101 bp. Overall, these data are of very high quality and I feel comfortable moving forward with them.
+The per-base qscore is more than sufficient for these data at above 30 and the per-sequence-quality scores are also very high quality. The sequence length distribution is all an even 101 bp. Overall, these data are of very high quality and I feel comfortable moving forward with them.
 
 \pagebreak
 
@@ -141,9 +141,7 @@ knitr::include_graphics("readlen_plots/readlen_19_3F_fox_S14_L008_R1R2.png")
 
 For the '2 2B control S2' sample, 7.3% of reads (423,128) were trimmed from R1 and 8.1% of reads (473,368) were trimmed from R2. For the '19 3F fox S14' sample, 3.3% of reads (546,623) were trimmed from R1 and 4.1% of reads (676,564) were trimmed from R2. In both conditions, all reads passed filters and were written.
 
-Adapter was trimmed at a similar rate in both sets with R2 being trimmed slightly more extensively. This makes sense as the reads should be the same length, ????
-
-These plots agree that R1 is trimmed more extensively than R2 as R1 reads are shorter than R2.
+These plots show that R2 is trimmed more extensively than R2 as there are a larger number of short R2 reads. This makes sense as R2 data quality decreases as the sequencing continues. The Illumina clusters are not as defined due to the DNA degrading and non-template DNA adding itself to the cluster.
 
 \pagebreak
 
