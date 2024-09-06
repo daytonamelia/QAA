@@ -103,9 +103,9 @@ knitr::include_graphics("perbasehist_plots/19_3F_fox_S14_L008_R1_001_perbasehist
 knitr::include_graphics("perbasehist_plots/19_3F_fox_S14_L008_R2_001_perbasehist.png")
 ```
 
-The overall line of the plots (the means of the scores) is exactly the same, but my plots lack the error bars and color coding. The fastqc plots took 3 minutes and 45 seconds and my histogram script took 10 minutes and 2 seconds. The fastqc plots took less memory (~20 kbytes less) and produced a lot more data! Fastqc is likely much more optimized and written in a language closer to the hardware such as java so it outperforms my script. Essentially, the fastqc plot is faster and prettier, but both methods produce the same data.
+The overall line of the plots (the means of the scores) is the same as FASTQC but my plots lack the error bars and color coding. The fastqc plots took 3 minutes and 45 seconds and my histogram script took 10 minutes and 2 seconds. The fastqc plots took less memory (~20 kbytes less) and produced a lot more data! Fastqc is likely much more optimized and written in a language closer to the hardware such as java so it outperforms my script. Essentially, the fastqc plot is faster and prettier, but both methods can produce the same plot.
 
-The per-base qscore is more than sufficient for these data, and the per-sequence-quality scores are also very high quality. The sequence length distribution is all an even 101 bp. Overall, these data are of very high quality and I feel comfortable moving forward with them.
+The per-base qscore is more than sufficient for these data at above 30 and the per-sequence-quality scores are also very high quality. The sequence length distribution is all an even 101 bp. Overall, these data are of very high quality and I feel comfortable moving forward with them.
 
 \pagebreak
 
@@ -141,34 +141,45 @@ knitr::include_graphics("readlen_plots/readlen_19_3F_fox_S14_L008_R1R2.png")
 
 For the '2 2B control S2' sample, 7.3% of reads (423,128) were trimmed from R1 and 8.1% of reads (473,368) were trimmed from R2. For the '19 3F fox S14' sample, 3.3% of reads (546,623) were trimmed from R1 and 4.1% of reads (676,564) were trimmed from R2. In both conditions, all reads passed filters and were written.
 
-Adapter was trimmed at a similar rate in both sets with R2 being trimmed slightly more extensively.
-
-These plots agree that R1 is trimmed more extensively than R2 as R1 reads are shorter than R2.
+These plots show that R2 is trimmed more extensively than R2 as there are a larger number of short R2 reads. This makes sense as R2 data quality decreases as the sequencing continues. The Illumina clusters are not as defined due to the DNA degrading and non-template DNA adding itself to the cluster.
 
 \pagebreak
 
 ## Alignment and Strand-Specificity
 
 ```{r echo=FALSE, paged.print=TRUE}
-ControlReads <- data.frame (
+ControlReads <- data.frame (list(
   Mapped=200241,
-  Unmapped=11388657)
+  Unmapped=11388657,
+  `Mapped to Forward`=4598,
+  `Mapped to Reverse`=54800,
+  TotalReads=11588898
+  ))
 
-FoxReads <- data.frame (
+ControlPercent <- data.frame(list(
+  `Percentage Mapped to Forward`=0.0793518,
+  `Percentage Mapped to Reverse`=0.945733
+))
+
+FoxReads <- data.frame (list(
   Mapped=732750,
-  Unmapped=31963176
-)
+  Unmapped=31963176,
+  `Mapped to Forward`=11853,
+  `Mapped to Reverse`=282927,
+  TotalReads=32695926
+  ))
 
+FoxPercent <- data.frame(list(
+  `Percentage Mapped to Forward`=0.0725044,
+  `Percentage Mapped to Reverse`=1.73066
+))
 
-knitr::kable(ControlReads, caption = "Table 1. Aligned '2 2B control S2' reads that map or do not map to reference mouse genome.", align = "c")
-knitr::kable(FoxReads, caption = "Table 2. Aligned '19 3F fox S14' reads that map or do not map to reference mouse genome.", align = "c")
+knitr::kable(ControlReads, caption = "Table 1. Aligned '2 2B control S2' reads that map or do not map to reference mouse genome. 'Mapped to Forward' and 'Mapped to Reverse' columns found with htseq-count package and --stranded parameter.", align = "c")
+knitr::kable(ControlPercent, caption = "Table 2. Percentage of aligned '2 2B control S2' reads that map to forward or reverse strand.", align = "c")
+knitr::kable(FoxReads, caption = "Table 3. Aligned '19 3F fox S14' reads that map or do not map to reference mouse genome. 'Mapped to Forward' and 'Mapped to Reverse' columns found with htseq-count package and --stranded paramater.", align = "c")
+knitr::kable(FoxPercent, caption = "Table 2. Percentage of aligned '2 2B control S2' reads that map to forward or reverse strand.", align = "c")
+
 ```
 
-
-
-Demonstrate convincingly whether or not the data are from "strand-specific" RNA-Seq libraries. Include any comands/scripts used. Briefly describe your evidence, using quantitative statements (e.g. "I propose that these data are/are not strand-specific, because X% of the reads are y, as opposed to z.").
-
-
-
-
+I propose that these data are strand-specific to the reverse strand, because 0.8674812% in 2_2B_control_S2 and 1.658156% in 19_3F_fox_S14 more reads mapped to the reverse strand. Reads preferentially mapping to any strand indicates that this is a strand-specific library. If the library was not strand specific, there would be an approximately equal distribution of reads between the two strands.
 
