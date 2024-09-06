@@ -149,29 +149,29 @@ These plots show that R2 is trimmed more extensively than R2 as there are a larg
 
 ```{r echo=FALSE, paged.print=TRUE}
 ControlReads <- data.frame (list(
-  Mapped=200241,
-  Unmapped=11388657,
-  `Mapped to Forward`=4598,
-  `Mapped to Reverse`=54800,
-  TotalReads=11588898
+  Mapped=11078796,
+  Unmapped=226280,
+  `Mapped to Forward`=219590,
+  `Mapped to Reverse`=4805275,
+  TotalReads=11305076
   ))
 
 ControlPercent <- data.frame(list(
-  `Percentage Mapped to Forward`=0.0793518,
-  `Percentage Mapped to Reverse`=0.945733
+  `Percentage Mapped to Forward`=3.8848,
+  `Percentage Mapped to Reverse`=85.0109
 ))
 
 FoxReads <- data.frame (list(
-  Mapped=732750,
-  Unmapped=31963176,
+  Mapped=30512167,
+  Unmapped=1286369,
   `Mapped to Forward`=11853,
   `Mapped to Reverse`=282927,
-  TotalReads=32695926
+  TotalReads=31798536
   ))
 
 FoxPercent <- data.frame(list(
-  `Percentage Mapped to Forward`=0.0725044,
-  `Percentage Mapped to Reverse`=1.73066
+  `Percentage Mapped to Forward`=3.14585,
+  `Percentage Mapped to Reverse`=81.3543
 ))
 
 knitr::kable(ControlReads, caption = "Table 1. Aligned '2 2B control S2' reads that map or do not map to reference mouse genome. 'Mapped to Forward' and 'Mapped to Reverse' columns found with htseq-count package and --stranded parameter.", align = "c")
@@ -181,5 +181,5 @@ knitr::kable(FoxPercent, caption = "Table 2. Percentage of aligned '2 2B control
 
 ```
 
-I propose that these data are strand-specific to the reverse strand, because 0.8674812% in 2_2B_control_S2 and 1.658156% in 19_3F_fox_S14 more reads mapped to the reverse strand. Reads preferentially mapping to any strand indicates that this is a strand-specific library. If the library was not strand specific, there would be an approximately equal distribution of reads between the two strands.
+I propose that these data are strand-specific to the reverse strand, because 85.0109% of reads in 2_2B_control_S2 and 81.3543% of reads in 19_3F_fox_S14 mapped to the reverse strand. Reads preferentially mapping to any strand indicates that this is a strand-specific library. If the library was not strand specific, there would be an approximately equal distribution of reads between the two strands.
 

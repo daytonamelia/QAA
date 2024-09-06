@@ -760,7 +760,7 @@ Making plot...
 Done!
 ```
  ------------------
-| Monday 240902  |
+| Monday 240902    |
  ------------------
 
 ## Part 3 - Alignment and strand-specificity
@@ -1157,3 +1157,110 @@ $ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print (mapped/(mapped+
 Looks like this library is strand-specific to the reverse strand.
 
 Okay! I formatted all of this in my R markdown, so I can submit once I figure out the adapter question...
+
+ ------------------
+| Thursday 240904  |
+ ------------------
+
+Starting at STAR I ran the wrong files, the trimmed not the paired reads.
+
+So time to rerun STAR on different reads!
+
+```
+	Command being timed: "STAR --runThreadN 8 --runMode alignReads --outFilterMultimapNmax 3 --outSAMunmapped Within KeepPairs --alignIntronMax 1000000 --alignMatesGapMax 1000000 --readFilesCommand zcat --readFilesIn ../2_2B_control_S2_L008/fw_paired_2_2B_control_S2_L008_R1_001.fq.gz ../2_2B_control_S2_L008/rv_paired_2_2B_control_S2_L008_R2_001.fq.gz --genomeDir ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b --outFileNamePrefix ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_"
+	User time (seconds): 313.26
+	System time (seconds): 10.10
+	Percent of CPU this job got: 558%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:57.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 27402540
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 144694
+	Voluntary context switches: 39039
+	Involuntary context switches: 913
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+	Command being timed: "STAR --runThreadN 8 --runMode alignReads --outFilterMultimapNmax 3 --outSAMunmapped Within KeepPairs --alignIntronMax 1000000 --alignMatesGapMax 1000000 --readFilesCommand zcat --readFilesIn ../19_3F_fox_S14_L008/fw_paired_19_3F_fox_S14_L008_R1_001.fq.gz ../19_3F_fox_S14_L008/rv_paired_19_3F_fox_S14_L008_R2_001.fq.gz --genomeDir ../../Mus_musculus.GRCm39.dna_ens112_STAR_27.11b --outFileNamePrefix ../19_3F_fox_S14_L008/align_2_19_3F_fox_S14_L008_"
+	User time (seconds): 1019.08
+	System time (seconds): 12.78
+	Percent of CPU this job got: 708%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:25.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 27513568
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 212604
+	Voluntary context switches: 109459
+	Involuntary context switches: 2686
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+```
+
+Now I need to rerun my PS8_sammapped script and htseqcount on these aligned files.
+
+```
+(QAA) [01:48:49 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/pyscripts] adayton:n0354.talapas.uoregon.edu
+$ ./sammapped.py -f ../2_2B_control_S2_L008/align_2_2B_control_S2_L008_Aligned.out.sam 
+Mapped reads:    11078796
+Unmapped reads:  226280
+(QAA) [01:49:20 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/pyscripts] adayton:n0354.talapas.uoregon.edu
+$ ./sammapped.py -f ../19_3F_fox_S14_L008/align_2_19_3F_fox_S14_L008_Aligned.out.sam 
+Mapped reads:    30512167
+Unmapped reads:  1286369
+```
+
+Counting the mapped reads, the unmapped reads and the total reads...
+
+```
+(base) [10:00:18 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print mapped, unmapped, (mapped+unmapped)}' 2_2B_control_S2_L008_htseqcount_fwd.txt
+219590 5432948 5652538
+(base) [10:05:21 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print mapped, unmapped, (mapped+unmapped)}' 2_2B_control_S2_L008_htseqcount_rvs.txt 
+4805275 847263 5652538
+(base) [10:05:29 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print mapped, unmapped, (mapped+unmapped)}' 19_3F_fox_S14_L008_htseqcount_fwd.txt 
+500167 15399101 15899268
+(base) [10:05:37 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print mapped, unmapped, (mapped+unmapped)}' 19_3F_fox_S14_L008_htseqcount_rvs.txt
+12934731 2964537 15899268
+```
+
+And the percentage:
+
+```
+(base) [10:05:46 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print (mapped/(mapped+unmapped))*100}' 2_2B_control_S2_L008_htseqcount_fwd.txt 
+3.8848
+(base) [10:05:57 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print (mapped/(mapped+unmapped))*100}' 2_2B_control_S2_L008_htseqcount_rvs.txt 
+85.0109
+(base) [10:06:05 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print (mapped/(mapped+unmapped))*100}' 19_3F_fox_S14_L008_htseqcount_fwd.txt
+3.14585
+(base) [10:06:11 /projects/bgmp/adayton/bioinfo/Bi623/Assignments/QAA/QAA/htseqcount_data] adayton:n0349.talapas.uoregon.edu
+$ awk '$1!~"__" {mapped+=$2} $1~"__" {unmapped+=$2}  END {print (mapped/(mapped+unmapped))*100}' 19_3F_fox_S14_L008_htseqcount_rvs.txt 
+81.3543
+```
+
+Updated markdown, should be done!
